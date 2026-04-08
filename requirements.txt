@@ -1,0 +1,6 @@
+Flask
+nose
+nosetest
+coverage
+flake8
+picard
