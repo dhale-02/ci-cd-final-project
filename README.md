@@ -1,10 +1,10 @@
-# ci-cd-final-project
+# DevOps Capstone Project
 
-## CI/CD Tools and Practices Final Project Template
+[![Build Status](https://github.com/dhale-02/ci-cd-final-project/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/dhale-02/ci-cd-final-project/actions/workflows/ci-build.yaml)
 
-**Project name: ci-cd-final-project**
+## DevOps Capstone
 
-This project implements a complete CI/CD pipeline using GitHub Actions and OpenShift Pipelines (Tekton) for a RESTful counter microservice.
+This project implements a complete CI/CD pipeline using GitHub Actions and OpenShift Pipelines (Tekton) for a RESTful Accounts microservice.
 
 ## Overview
 - CI pipeline using GitHub Actions (lint + unit test)
@@ -16,3 +16,4 @@ This project implements a complete CI/CD pipeline using GitHub Actions and OpenS
 - Nose (unit testing)
 - Tekton / OpenShift Pipelines
 - GitHub Actions
+- Docker / Kubernetes
