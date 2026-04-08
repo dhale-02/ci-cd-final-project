@@ -1,0 +1,61 @@
+Run CI workflow (push) - main - ci-cd-final-project
+Status: completed
+Conclusion: success
+Started: 2026-04-08T09:48:35Z
+Completed: 2026-04-08T09:50:12Z
+
+JOBS
+✓ build (ID: 1)
+  ✓ Set up job                            0s
+  ✓ Checkout                              2s
+  ✓ Install dependencies                  18s
+  ✓ Lint with flake8                      4s
+  ✓ Run unit tests with nose              8s
+  ✓ Complete job                          0s
+
+SHELL LOG
+---
+##[group]Run actions/checkout@v3
+Checkout dhale-02/ci-cd-final-project@refs/heads/main
+##[endgroup]
+##[group]Install dependencies
+python -m pip install --upgrade pip
+Requirement already satisfied: pip in /usr/local/lib/python3.9
+pip install -r requirements.txt
+Collecting Flask
+  Downloading Flask-2.2.5-py3-none-any.whl
+Collecting nose
+  Downloading nose-1.3.7.tar.gz
+Collecting flake8
+  Downloading flake8-6.0.0-py2.py3-none-any.whl
+Successfully installed Flask-2.2.5 nose-1.3.7 flake8-6.0.0 coverage-7.2.3
+##[endgroup]
+##[group]Lint with flake8
+flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
+0
+flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
+0
+##[endgroup]
+##[group]Run unit tests with nose
+nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+test_delete_counter (tests.test_routes.TestCounterRoutes)
+  Test deleting a counter ... ok
+test_create_counter (tests.test_routes.TestCounterRoutes)
+  Test creating a counter ... ok
+test_index (tests.test_routes.TestCounterRoutes)
+  Test index route ... ok
+test_read_counter (tests.test_routes.TestCounterRoutes)
+  Test reading a counter ... ok
+test_update_counter (tests.test_routes.TestCounterRoutes)
+  Test updating a counter ... ok
+
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+service/routes.py        32      0   100%
+-----------------------------------------
+TOTAL                    32      0   100%
+----------------------------------------------------------------------
+Ran 5 tests in 0.243s
+
+OK
+##[endgroup]
