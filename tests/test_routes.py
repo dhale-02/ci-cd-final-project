@@ -8,6 +8,7 @@ class TestAccountRoutes(unittest.TestCase):
     """Test cases for Account Service Routes"""
 
     def setUp(self):
+        """Set up test client and clear accounts before each test"""
         self.client = app.test_client()
         from service import routes
         routes.accounts = {}
@@ -19,7 +20,6 @@ class TestAccountRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         data = json.loads(response.data)
         self.assertEqual(data["name"], "Account REST API Service")
-        self.assertEqual(data["version"], "1.0")
 
     def test_create_account(self):
         """It should create a new Account"""

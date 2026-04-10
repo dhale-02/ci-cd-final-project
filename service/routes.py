@@ -20,7 +20,7 @@ def create_account():
         abort(400, "No data provided")
     account_id = next_id[0]
     next_id[0] += 1
-    accounts[account_id] = data
+    accounts[account_id] = dict(data)
     accounts[account_id]["id"] = account_id
     return jsonify(accounts[account_id]), 201
 
