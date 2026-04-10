@@ -1,6 +1,7 @@
 Flask
 nose
-nosetest
 coverage
 flake8
-picard
+pylint
+flask-talisman
+flask-cors
